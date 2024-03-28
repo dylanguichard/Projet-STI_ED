@@ -1,0 +1,41 @@
+#forms {
+	display: flex;
+	justify-content: center;
+	gap: 70px;
+	align-items: center;
+}
+
+main form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 20%;
+	padding: 2%;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.8);
+	border-radius: 8px;
+}
+main form h3 {
+	margin: 0;
+}
+main form input,
+main form select {
+	width: calc(100% - 20px);
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid white;
+	border: 1px solid #ccc;
+}
+main form input:focus-visible {
+	border: 1px solid black;
+	outline: none;
+}
+
+main form select {
+	width: 100%;
+}
+
+main form input[type="submit"] {
+	width: auto;
+	align-self: flex-end;
+}
