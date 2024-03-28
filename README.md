@@ -30,6 +30,7 @@
   - `/server.js` Permet de lancer le server et de l'initialiser avec un fonctionnement (app)
   - `/app.js` Gere le fonctionnement du server
   - `/db.js` Gere la connexion à la BDD du server
+  - `/package.js & /package-lock.json` Contient les librairies nécéssaires au projet (ne pas modifier)
   - `/routes` Contient les routes (URL) accessibles du server
   - `/controller` Contient les fonctions à exécuter quand une requête est recue par une route
   - `/middleware` Surcouche à executer dans certains cas (`auth.js` vérifie si l'utilisateur est connecté)

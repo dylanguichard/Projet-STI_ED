@@ -2,3 +2,21 @@ body {
 	margin: 0;
 	background-color: beige;
 }
+
+header {
+	display: flex;
+	padding: 10px;
+}
+header a {
+	color: black;
+}
+header i {
+	font-size: 2rem;
+}
+main h1,
+main h2 {
+	text-align: center;
+}
+.hidden {
+	display: none;
+}

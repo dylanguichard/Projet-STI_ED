@@ -8,14 +8,22 @@
 		<script src="assets/js/cookieManager.js"></script>
 		<script src="assets/js/index.js"></script>
 		<link rel="stylesheet" href="assets/css/index.css" />
+		<link rel="stylesheet" href="assets/css/home.css" />
 	</head>
 	<body>
-		<header>
+		<header class="logged hidden">
+			<a onclick="loggout()"><i class="fa-solid fa-right-from-bracket"></i></a>
+		</header>
+		<header class="invited hidden">
 			<a href="login.html"><i class="fa-solid fa-right-to-bracket"></i></a>
 		</header>
 		<main>
 			<h1>Plateforme STI Ed</h1>
-			<h2>Bienvenue</h2>
+			<h2>Bienvenue <span id="username"></span></h2>
+			<div class="dataTest hidden">
+				<h3>Les données contenu dans la table "test" de notre BDD</h3>
+				<div class="data"></div>
+			</div>
 		</main>
 	</body>
 </html>
