@@ -41,10 +41,11 @@ function getUser() {
 			// On assigne la valeur récupéré à la variable username
 			username = json.username;
 
+			showHeader();
+
 			// Si on a bien récupérer un username
 			if (username) {
 				showUser();
-				showHeader();
 				getTests();
 			}
 		});

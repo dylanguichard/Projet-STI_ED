@@ -34,3 +34,25 @@
   - `/routes` Contient les routes (URL) accessibles du server
   - `/controller` Contient les fonctions à exécuter quand une requête est recue par une route
   - `/middleware` Surcouche à executer dans certains cas (`auth.js` vérifie si l'utilisateur est connecté)
+
+## Fonctionnement
+### Home
+- Quand on ouvre la page index.html sur un navigateur (front) on appelle la fonction getUser()
+- Cette fonction fait une requete vers notre server (back) pour récupérer l'utilisateur connecté
+- Notre server recoit cette requete, et vérifie si un utilisateur est connecté via le jeton d'authentification envoyé (token)
+- Si il est connecté le server renvoi le nom de l'utilisateur sinon il renvoit une erreur
+- Le front recoit ce nom et l'écrit sur la page pour qu'il soit visible pour l'utilisateur
+- Il en profite pour faire une nouvelle requete au server pour récupérer les objets de la table Test de notre BDD
+- Le server renvoi ces données au front qui les affiche à leur tour
+
+### Login
+- L'utilisateur rempli le formulaire de connexion et clique sur envoyer
+- Cela déclanche une fonction javascript (front) qui va faire une requete vers le server contenant les identifiants que l'utilisateur à saisie
+- Le server recoit ces données et vérifie si elles correspondent à un utilisateur dans la base de données
+- Si c'est le cas le server renvoit un jeton d'authentification au front qui lui permettra de prouver qu'il est connecté
+- Ce jeton est stocké par le front sous forme de cookie dans le navigateur
+
+### Signup
+- L'utilisateur rempli le formulaire de connexion et clique sur envoyer
+- Cela déclanche une fonction javascript (front) qui va faire une requete vers le server contenant les identifiants que l'utilisateur à saisie
+- Le server va crypter le mot de passe par mesure de sécurité pour que personne ne puisse le lire

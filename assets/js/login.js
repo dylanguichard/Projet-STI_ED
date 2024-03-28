@@ -49,7 +49,12 @@ function login(e) {
 	}).then((res) => {
 		res.json().then((json) => {
 			console.log(json);
+
+			// On stock le jeton sous forme de cookie dans le navigateur
 			setCookie("token", json.token, 24);
+
+			// On redirige l'utilisateur sur la page d'accueil
+			window.location.href = "index.html";
 		});
 	});
 }
