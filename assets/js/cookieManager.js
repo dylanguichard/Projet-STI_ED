@@ -1,3 +1,4 @@
+// Ajoute un cookie au navigateur
 function setCookie(cname, cvalue, hours) {
 	const d = new Date();
 	d.setTime(d.getTime() + hours * 60 * 60 * 1000);
@@ -5,6 +6,7 @@ function setCookie(cname, cvalue, hours) {
 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+// Récupère la valeur du cookie
 function getCookie(cname) {
 	let name = cname + "=";
 	let ca = document.cookie.split(";");
@@ -18,16 +20,4 @@ function getCookie(cname) {
 		}
 	}
 	return "";
-}
-
-function checkCookie() {
-	let user = getCookie("username");
-	if (user != "") {
-		alert("Welcome again " + user);
-	} else {
-		user = prompt("Please enter your name:", "");
-		if (user != "" && user != null) {
-			setCookie("username", user, 365);
-		}
-	}
 }

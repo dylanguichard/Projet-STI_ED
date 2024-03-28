@@ -1,24 +1,19 @@
-const express = require("express"); // npm i express
-const session = require("express-session"); // npm i express-session;
+const express = require("express");
 
 const app = express();
-const cors = require("cors"); // npm i cors
+const cors = require("cors");
 
+// Gestions des routes (URL)
 const testsRoutes = require("./routes/tests");
 const userRoutes = require("./routes/user");
 
-app.use(
-	session({
-		secret: "secret",
-		resave: true,
-		saveUninitialized: true,
-	})
-);
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cors());
+app.use(express.json()); // Transforme toutes les données recues en JSON
+app.use(cors()); // Gestion des CORS (appel de server via une origine différente)
 
+// Pour les URL contenant /api/tests/ on utilisera les routes de testsRoutes
 app.use("/api/tests/", testsRoutes);
+// Pour les URL contenant /api/user/ on utilisera les routes de userRoutes
 app.use("/api/user/", userRoutes);
 
 module.exports = app;

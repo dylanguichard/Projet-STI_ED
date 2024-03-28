@@ -1,21 +1,15 @@
 const db = require("../db");
 
 exports.getTests = (req, res, next) => {
-	console.log("Enter get tests");
+	// Se connecte à la base de données et exécute la requête
 	db.con.query("SELECT * FROM test", (err, queryRes, fields) => {
+		// Si erreur, on renvoi l'erreur
 		if (err) throw err;
+
+		// Transforme le résultat en objet utilisable
 		queryRes = queryRes.map((v) => Object.assign({}, v));
-		console.log(queryRes);
+
+		// Réponds avec le statut 200 (Success) et les objets récupéré sur la base
 		res.status(200).json(queryRes);
-		return res;
-	});
-};
-exports.saveTest = (req, res, next) => {
-	console.log("Req body : ");
-	// console.log(req);
-	console.log(req.body);
-	db.saveTest(req.body);
-	res.status(201).json({
-		message: "Objet créé !",
 	});
 };
